@@ -1,5 +1,5 @@
 @echo off
-title Syszil 1.0
+title Syszil 2.0
 echo Finding a kernel...
 echo Loading syszil.dll...
 pause
@@ -7,22 +7,30 @@ echo Loaded!
 pause
 
 cls
-title Syszil 1.0 Setup
-echo Welcome to Syszil 1.0 Setup!
+title Syszil 2.0 Setup
+echo Welcome to Syszil 2.0 Setup!
 echo Please enter your username
-set /p username=
-cls
+set /p account=
 echo Loading the console...
 pause
-echo Welcome to Syszil 1.0, %username%.
+echo Welcome to Syszil 2.0, %account%.
+pause
 goto :menu
 
 :menu
+cls
+title Syszil 2.0 Desktop
 echo What Applications Do you want to lanuch?
 echo 1. System Info
+echo 2. RD-1 (Sandboxed Taskmgr (with access to PC))
 
 set /p input=
 if %input% == 1 goto info
+if %input% == 2 goto rd-1
+
+:rd-1
+start taskmgr -d
+goto :menu
 
 :info
 
@@ -32,13 +40,13 @@ echo     SYSZIL
 echo.=======================
 echo     DETAILS  
 echo.
-echo     VERSION = 1.0
+echo     VERSION = 2.0
 echo.     
-echo     RAM = 1GB
+echo     RAM = 4GB
 echo.
-echo     CORE = INTEL CORE 2 DUO
+echo     CORE = AMD RYZEN 5
 echo.
-echo     HARD_DRIVE = 64GB     
+echo     HARD_DRIVE = 128GB     
 echo.   
 echo     Kernel ver = 1.0
 echo.  
@@ -67,7 +75,8 @@ echo.
 pause
 cls
 echo.
-echo No updates :( But you can check the Github page! (www.github.com/WJTZIL/Syszil)
+echo No updates :( But you can check the Github page for this project! (github.com/WJTZIL/Syszil)
+echo Old versions: (github.com/WJTZIL/Syszil/releases/tag/operating-system)
 echo.
 pause
 goto menu
